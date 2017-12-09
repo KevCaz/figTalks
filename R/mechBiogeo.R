@@ -1,5 +1,6 @@
 ##---
-myspec <-  function(nb, cx, cy, ry, ...){
+myspec <-  function(nb, cx, cy, ry, seed = 1987, ...){
+  set.seed(seed)
   theta <- runif(nb)*2*pi
   rayon <- runif(nb)*ry
   points(cx + rayon*cos(theta), cy + rayon*sin(theta), ...)
@@ -56,7 +57,7 @@ figAll <- function(filename="img/figall", part=1, wi=8.5, hg=5, colg="#CCCCCC",
   }
 
   par(mar=c(0.1, 2, 0.1, 2))
-  image(matrix(1:100, ncol=1), col=colorRampPalette(c('#CCCCCC', '#232323'))(512), axes=FALSE, ann=FALSE)
+  image(matrix(1:100, ncol=1), col=colorRampPalette(c('#CCCCCC', '#3fb3b2', '#545454'))(512), axes=FALSE, ann=FALSE)
 
   ##
   par(mar=c(0.2,0.1,0.1,0.1), yaxs="i")
@@ -69,18 +70,18 @@ figAll <- function(filename="img/figall", part=1, wi=8.5, hg=5, colg="#CCCCCC",
   if (part>1){
     myspec(60, 1, 1, .8, pch=19, cex=1.2, col=col1, lwd=.8)
     if (part>2){
-      myspec(60, 2, 4, .8, pch=19, cex=1.2, col=col1, lwd=.8)
-      myspec(60, 3, 2, .8, pch=19, cex=1.2, col=col1, lwd=.8)
+      myspec(60, 2, 4, .8, seed=123, pch=19, cex=1.2, col=col1, lwd=.8)
+      myspec(60, 3, 2, .8, seed=455, pch=19, cex=1.2, col=col1, lwd=.8)
     }
   }
 
   if (part>4 & part<8){
-    myspec(60, 5, 3.8, 1.2, pch=19, cex=1.2, col=col2, lwd=.8)
-    myspec(40, 4.5, 1, .6, pch=19, cex=1.2, col=col2, lwd=.8)
+    myspec(60, 5, 3.8, 1.2, seed=901, pch=19, cex=1.2, col=col2, lwd=.8)
+    myspec(40, 4.5, 1, .6, seed = 22, pch=19, cex=1.2, col=col2, lwd=.8)
     myspec(45, 6.8, 1.6, 1, pch=19, cex=1.2, col=col2, lwd=.8)
     #
     myspec(60, 7.5, 4, .8, pch=19, cex=1.2, col=col4, lwd=.8)
-    myspec(80, 9, 1.6, 1.4, pch=19, cex=1.2, col=col4, lwd=.8)
+    myspec(80, 9, 1.6, 1.4, seed = 266, pch=19, cex=1.2, col=col4, lwd=.8)
   }
   if (part>7){
     myspec(60, 5, 3.8, 1.2, pch=19, cex=1.2, col=col2, lwd=.8)

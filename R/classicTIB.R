@@ -32,7 +32,7 @@ showtext_auto()
 
 
 figMW <- function(filename = "img/figMW", part = 1, hg = 5, wi = 8.5, res = 300,
-  col1 = '#787878', col2 = "#1b95e0", col3 = '#232323'){
+  col1 = '#787878', col2 = "#3fb3b2", col3 = '#232323'){
   ##
   cex.l <- 6
   filename <- paste0(filename, part, ".png")
@@ -50,8 +50,8 @@ figMW <- function(filename = "img/figMW", part = 1, hg = 5, wi = 8.5, res = 300,
       fg= col1,
       col.axis = col1,
       family = "arya",
-      mar = c(2.5, 1.5, 2, 0),
-      mgp = c(2.4, 1, 0)
+      mar = c(3, 1.5, 2, 0),
+      mgp = c(2.8, 1, 0)
     )
 
     ##--- Main plot region
@@ -61,14 +61,14 @@ figMW <- function(filename = "img/figMW", part = 1, hg = 5, wi = 8.5, res = 300,
 	    if (part>6) lines(A, C[,2L], lwd=3, col=col1, lty=4)
 	    if (part>4) lines(A, B[,3L], lwd=3, col=col2)
 	    if (part>5) lines(A, C[,3L], lwd=3, col=col2, lty=4)
-      mtext(1, text="Specific richness", cex=cex.l, line=.5)
+      mtext(1, text="Specific richness", cex=cex.l, line=.8)
       mtext(3, at=-0.5, text="Rates", cex=cex.l, line=.25)
       box(bty="l")
 
       if (part>7) {
-      par(mgp=c(2, .4, 0))
-       points(c(16.53,82.92), c(0.08,0.08), col=c(col1, col2), pch=19)
-       axis(1,at=c(16.53,82.92), lwd=0, lwd.ticks=2, labels=c("-","+"), col=col1, tck=0, cex=2)
+      par(mgp=c(2.8, .8, 0))
+       points(c(16.53,82.92), c(0.08,0.08), col=c(col1, col2), pch=19, cex=2)
+       axis(1, at=c(16.53,82.92), lwd=0, lwd.ticks=2, labels=c("-","+"), col=col1, tck=0, cex.axis=10)
       }
 
       if (part>4){
@@ -76,7 +76,7 @@ figMW <- function(filename = "img/figMW", part = 1, hg = 5, wi = 8.5, res = 300,
           legend(0, 0.53, c("Colonisation"), lty=1, ncol=2, bty="n",
           seg.len=1.2, cex=4, lwd=2)
         } else {
-          legend(0, 0.53, c("Colonisation", "Extinction"), lty=c(1,4), ncol=2, bty="n",
+          legend(-4, 0.525, c("Colonisation", "Extinction"), lty=c(1,4), ncol=2, bty="n",
           seg.len=1.2, cex=4, lwd=2)
         }
       }
