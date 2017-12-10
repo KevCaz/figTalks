@@ -62,8 +62,8 @@ figEcogr <- function(filename="img/figeco", part=1, wi = 8.5, hg = 5,
   id_sp1 <- c(1,3,6)
   edges <- matrix(c(1,3,3,6), ncol=2, byrow=TRUE)
   for (i in 1:nrow(edges)) lines(seqx[edges[i,]],seqy[edges[i,]], lwd=3, col=colg2)
-  points(seqx[id_sp1], seqy[id_sp1], pch=21, col=colg1, bg=colg2, cex=cexP, lwd=1)
-  text(seqx[id_sp1], seqy[id_sp1], labels=id_sp1, cex=cexP, col=colg1)
+    points(seqx[id_sp1], seqy[id_sp1], pch=21, col=colg1, bg=colg2, cex=cexP, lwd=1)
+    text(seqx[id_sp1], seqy[id_sp1], labels=id_sp1, cex=cexP, col=colg1)
   }
 
   if (part>2){
