@@ -23,19 +23,19 @@ figAll <- function(filename="img/figall", part=1, wi=8.5, hg=5, colg="#CCCCCC",
 
   filename <- paste0(filename, part, ".png")
 
-  png(file=filename, res=300, width=wi, height=hg, unit="in")
+  png(file = filename, res = 300, width = wi, height = hg, unit = "in")
   par(
-    cex=1.5,
+    cex = 1.5,
     cex.lab = 4,
     cex.axis = 4,
     las = 1,
     lwd = 2,
     bg = "transparent",
-    fg= colg,
+    fg = colg,
     col.axis = colg,
-    family="arya",
+    family = "arya",
     mar = c(1.5,0.5,1,0),
-    mgp=c(2.2,1,0)
+    mgp = c(2.2,1,0)
   )
   layout(rbind(1,2,3,c(4,5)), heights=c(.2, .06, 1, .24), widths=c(.2,1))
 
@@ -43,15 +43,15 @@ figAll <- function(filename="img/figall", part=1, wi=8.5, hg=5, colg="#CCCCCC",
   ##
   plot0(c(0,10), c(0,.5))
   seqx <- seq(0, 10, .1)
-  if (part<3) text(5,.25, labels="e.g. temperature", cex=6, col=colg)
-  if (part>3 & part<8) lines(seqx, dnorm(seqx, 2, .78), col=col1, lwd=1.8)
-  if (part>4 & part<8) {
-    lines(seqx, dnorm(seqx, 5.4, .78), col=col2, lwd=1.8)
-    lines(seqx, dnorm(seqx, 8.2, .78), col=col4, lwd=1.8)
-  }
-  if (part>5) lines(seqx, dnorm(seqx, 5, 1.1), col=col3, lwd=1.8)
+  if (part<4) text(5,.25, labels="abiotic gradient", cex=3, col=colg)
+  # if (part>3 & part<8) lines(seqx, dnorm(seqx, 2, .78), col=col1, lwd=1.8)
+  # if (part>4 & part<8) {
+  #   lines(seqx, dnorm(seqx, 5.4, .78), col=col2, lwd=1.8)
+  #   lines(seqx, dnorm(seqx, 8.2, .78), col=col4, lwd=1.8)
+  # }
+  # if (part>5) lines(seqx, dnorm(seqx, 5, 1.1), col=col3, lwd=1.8)
 
-  if (part>7){
+  if (part>8){
     lines(seqx, dnorm(seqx, 7.8, .92), col=col2, lwd=1.8)
     lines(seqx, dnorm(seqx, 2, .88), col=col1, lwd=1.8)
   }
@@ -141,3 +141,4 @@ figAll(part = 5)
 figAll(part = 6)
 figAll(part = 7)
 figAll(part = 8)
+figAll(part = 9)

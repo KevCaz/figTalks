@@ -37,7 +37,7 @@ figEcogr <- function(filename="img/figeco", part=1, wi = 8.5, hg = 5,
   par(mar=c(0,0,0,0))
   ## Title 1
   plot(c(0,1),c(0,1), type="n", axes=FALSE, ann=FALSE)
-  text(.2,.5, labels="Regional pool", cex=cexT, pos=4, col=colg1)
+  text(.3,.5, labels = "Metaweb", cex=cexT, pos=4, col=colg1)
 
   ## Plot 1 -- metaweb
   par(mar=c(0,1,0,0))
@@ -53,13 +53,13 @@ figEcogr <- function(filename="img/figeco", part=1, wi = 8.5, hg = 5,
   ## Title 2
   par(mar=c(0,0,0,0))
   plot(c(0,1),c(0,1), type="n", axes=FALSE, ann=FALSE)
-  text(1,0.5, labels="Local communities", cex=cexT, pos=2, col=colg1)
+  text(.9,0.5, labels="Local webs", cex=cexT, pos=2, col=colg1)
 
 
   ## Plot 2-A First communities
   par(mar=c(.5, 4, .5, 1))
   plot0(c(-1,3.5), c(0,5), fill=mypal[80])
-  id_sp1 <- c(1,3,6)
+  id_sp1 <- c(1, 3, 6)
   edges <- matrix(c(1,3,3,6), ncol=2, byrow=TRUE)
   for (i in 1:nrow(edges)) lines(seqx[edges[i,]],seqy[edges[i,]], lwd=3, col=colg2)
     points(seqx[id_sp1], seqy[id_sp1], pch=21, col=colg1, bg=colg2, cex=cexP, lwd=1)
@@ -104,7 +104,9 @@ figEcogr <- function(filename="img/figeco", part=1, wi = 8.5, hg = 5,
   #### Plot Gradient
   par(mar=c(0,0,0,0))
   plot(c(0,1),c(0,1), type="n", axes=FALSE, ann=FALSE)
-  text(0.5,0.5, labels="Environmental gradient", srt=270, cex=cexT, col = colg1)
+  if (part<9) {
+    text(0.5,0.5, labels="Abiotic gradient", srt=270, cex=cexT, col = colg1)
+  } else text(0.5,0.5, label='Energy gradient', srt=270, cex=cexT, col = colW)
   ####
   par(mar=c(1.5, .9, 1.5, .9), font=2)
   image(matrix(1:100, nrow=1), col=mypal, axes=FALSE, ann=FALSE)
@@ -154,5 +156,6 @@ figEcogr(part=3)
 figEcogr(part=5)
 figEcogr(part=6)
 figEcogr(part=7)
+figEcogr(part=9)
 
 # for (i in 1:1) figEcogr(part=i)
