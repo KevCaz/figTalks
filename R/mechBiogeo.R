@@ -54,6 +54,7 @@ figAll <- function(filename="img/figall", part=1, wi=8.5, hg=5, colg="#CCCCCC",
   if (part>8){
     lines(seqx, dnorm(seqx, 7.8, .92), col=col2, lwd=1.8)
     lines(seqx, dnorm(seqx, 2, .88), col=col1, lwd=1.8)
+    lines(seqx, dnorm(seqx, 5.2, .78), col=col3, lwd=1.8)
   }
 
   par(mar=c(0.1, 2, 0.1, 2))
@@ -64,10 +65,10 @@ figAll <- function(filename="img/figall", part=1, wi=8.5, hg=5, colg="#CCCCCC",
   plot0(c(0,10), c(0,5))
 
 
-  myspec(2, 1, 1, .8, pch=19, cex=1.2, col=col1, lwd=.8)
+  if (part>3) myspec(2, 1, 1, .8, pch=19, cex=1.2, col=col1, lwd=.8)
   if (part==1) circle(x = 1, y = 1, radi =.9, lwd=1)
 
-  if (part>1){
+  if (part>3){
     myspec(60, 1, 1, .8, pch=19, cex=1.2, col=col1, lwd=.8)
     if (part>2){
       myspec(60, 2, 4, .8, seed=123, pch=19, cex=1.2, col=col1, lwd=.8)

@@ -106,7 +106,7 @@ figEcogr <- function(filename="img/figeco", part=1, wi = 8.5, hg = 5,
   plot(c(0,1),c(0,1), type="n", axes=FALSE, ann=FALSE)
   if (part<9) {
     text(0.5,0.5, labels="Abiotic gradient", srt=270, cex=cexT, col = colg1)
-  } else text(0.5,0.5, label='Energy gradient', srt=270, cex=cexT, col = colW)
+  } else text(0.5,0.5, label='Energy gradient (NVDI)', srt=270, cex=cexT, col = colW)
   ####
   par(mar=c(1.5, .9, 1.5, .9), font=2)
   image(matrix(1:100, nrow=1), col=mypal, axes=FALSE, ann=FALSE)

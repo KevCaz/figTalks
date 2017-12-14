@@ -85,7 +85,7 @@ figCostMotif <- function(filename="img/motifcost", part=1, wi = 8, hg = 7,
     mtext(1, line = 3.5, text=expression(alpha), cex=2.6, col=colg1)
     axis(2, at = c(min(val), max(val), max(val2)), labels = c("Emin", "Emax1", "Emax2"))
     ##
-    legend("topleft", legend = c(expression(phi==0.1), expression(phi==0.08)), lty = c(2,1), bty="n",   cex=1.5, lwd=2)
+    legend("topleft", legend = c(expression(phi==0.1), expression(phi==0.08)), lty = c(1,2), bty="n",   cex=1.5, lwd=2)
     box2(1:2, lwd=2, col=colg2)
   }
 

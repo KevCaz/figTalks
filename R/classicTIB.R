@@ -32,7 +32,7 @@ showtext_auto()
 
 
 figMW <- function(filename = "img/figMW", part = 1, hg = 5, wi = 8.5, res = 300,
-  col1 = '#787878', col2 = "#3fb3b2", col3 = '#232323'){
+  col1 = '#CCCCCC', col2 = "#3fb3b2", col3 = '#232323'){
   ##
   cex.l <- 6
   filename <- paste0(filename, part, ".png")
